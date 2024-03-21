@@ -1,0 +1,200 @@
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+/* Global Styles */
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #ffffff;
+}
+
+/* Container */
+.container {
+  width: 85%;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.container .title {
+  width: 60%;
+  margin: 0px auto 30px auto;
+}
+
+.container .title h2 {
+  font-family: 'Lobster', cursive;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.container .title p {
+  color: #333;
+  font-size: 1rem; /* Use rem for responsive sizing */
+}
+
+/* Content List */
+.content .list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.content .list li {
+  color: #000;
+  margin: 0px 15px;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+  font-size: 1rem; /* Use rem for responsive sizing */
+  font-weight: 600;
+  position: relative;
+}
+
+.content .list li::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #d4a373;
+  transition: .4s ease-in-out;
+}
+
+.content .list li:hover::after {
+  width: 100%;
+}
+
+.content .list li:first-child {
+  color: #d4a373;
+}
+
+/* Food Item Box */
+.box_flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.box {
+  width: 32%; /* Adjust base width as needed */
+  background: #FFF;
+  border-radius: 3px;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  animation: movement 1s ease-in-out;
+}
+
+.box .box_img {
+  width: 35%; /* Adjust image width based on content */
+  text-align: center;
+}
+
+.box_img img {
+  width: 100%; /* Adjust image size to maintain aspect ratio */
+  height: auto;
+}
+
+.box .text {
+  text-align: left;
+  width: calc(100% - (35% + 20px)); /* Adjust based on image width and margins */
+}
+
+/* Text Styles */
+.text h3 {
+  text-transform: capitalize;
+  font-size: 1.2rem; /* Adjust heading size based on preference */
+}
+
+.text hr {
+  width: 50px;
+  background: #d4a373;
+  height: 3px;
+  margin: 5px 0px 10px 0px;
+}
+
+.text section {
+  font-weight: 600;
+  margin-bottom: -5px;
+}
+
+.text .stars {
+  margin-bottom: -2px;
+}
+
+.text .stars i {
+  font-size: 13px;
+  color: #d4a373;
+}
+
+/* ... existing styles ... */
+
+@media (max-width: 768px) {
+    .box_flex {
+      flex-direction: column; /* Stack boxes vertically on small screens */
+    }
+    .box {
+      width: 100%; /* Make each box occupy full width on small screens */
+      margin-bottom: 10px; /* Adjust margin for better spacing */
+    }
+  }
+  .content .list li:hover {
+    animation: list-hover 0.2s ease-in-out;
+  }
+  
+  .box:hover {
+    animation: box-hover 0.2s ease-in-out;
+  }
+  
+  @keyframes list-hover {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.05); /* Slightly scale up on hover */
+    }
+  }
+  
+  @keyframes box-hover {
+    from {
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    }
+    to {
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px 1px; /* Enhance box-shadow on hover */
+    }
+  }
+  .box {
+    animation: box-appear 0.5s ease-in-out forwards;
+  }
+  
+  .box:nth-child(odd) {
+    animation-delay: 0.1s; /* Delay for odd numbered boxes */
+  }
+  
+  .box:nth-child(even) {
+    animation-delay: 0.2s; /* Delay for even numbered boxes */
+  }
+  
+  @keyframes box-appear {
+    from {
+      opacity: 0;
+      transform: scale(0.9); /* Scale boxes down slightly initially */
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+    
+  
